@@ -100,7 +100,7 @@ if($datas->result=='ok'){
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<meta name="HandheldFriendly" content="True"/>
 	<title>Тестовое задание SkyNet</title>
-	<link type="text/css" rel="stylesheet" href="/css/style.css?ver=1">
+	<link type="text/css" rel="stylesheet" href="css/style.css?ver=1">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
 </head>
 <body>
