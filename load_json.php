@@ -146,10 +146,21 @@ if($datas->result=='ok'){
 			/*
 			*  Открытие вариантов выбранного тарифа по клику на блоке тарифа
 			*/
-			$('#tarifs_block .inner_block .item').on('click',function(){
-				var index = $('#tarifs_block .inner_block .item').index(this);
+			$('#tarifs_block .tarifs_list > .item').on('click',function(){
+				var index = $('#tarifs_block .tarifs_list > .item').index(this);
 				var tarifts = [];
 				var t_name = '';
+				var price_month = 0;
+				
+				/*
+				*  Получаем цену за 1 месяц для сравнения скидки
+				*/
+				for(var m=0; m<arr[index]['tarifs'].length; m++){
+					if(arr[index]['tarifs'][m]['pay_period']==1){
+						price_month = arr[index]['tarifs'][m]['price'];
+						break;
+					}
+				}
 				
 				/*
 				*  Перебираем список вариантов тарифа
@@ -159,8 +170,22 @@ if($datas->result=='ok'){
 					t_name = arr[index]['title'];
 					var pay_period = arr[index]['tarifs'][t]['pay_period'];
 					var price = arr[index]['tarifs'][t]['price'];
+					var full_price = price_month * pay_period;
+					var discount_price = full_price - price;
+					var pay_period_name = pay_period+' месяц';
+					var discount = '';
+					if(pay_period>1 && pay_period<5){
+						pay_period_name = pay_period+' месяца';
+						discount = ' <br>Скидка &mdash; '+discount_price+' ₽';
+					}
+					else if(pay_period>4){
+						pay_period_name = pay_period+' месяцев';
+						discount = ' <br>Скидка &mdash; '+discount_price+' ₽';
+					}
+					
+					var price_month_this = price / pay_period;
 
-					tarifts.push('<div class="block" data-sub_id="'+id+'"><div class="title">'+pay_period+' месяц</div><div class="body"><div class="price">'+price+' ₽/мес</div></div></div>');
+					tarifts.push('<div class="block" data-sub_id="'+id+'"><div class="title">'+pay_period_name+'</div><div class="body"><div class="price">'+price_month_this+' ₽/мес</div><div class="text">Разовый платеж &mdash; '+price+' ₽'+discount+'</div></div></div>');
 				}
 				$('.subtarifs_list').html('<div class="item"><div class="name">Тариф "'+t_name+'"</div><div class="wrap">'+tarifts.join('')+'</div></div>');
 				
@@ -211,10 +236,21 @@ if($datas->result=='ok'){
 					/*
 					*  Подставляем блок новыми параметрами выбранного тарифа
 					*/
-					$('#tarifs_block .tarif_selection .item .block .title').html('Тариф "'+t_name+'"');
-					$('#tarifs_block .tarif_selection .item .block .text').html('<div class="text">разовый платеж - '+price+' ₽ <br>со счёта спишется - '+price+' ₽</div>');
-					$('#tarifs_block .tarif_selection .item .block .price').html('<div class="price">Период оплаты - '+pay_period+' <br>'+price+' ₽/мес</div>');
-					$('#tarifs_block .tarif_selection .item .block .body .action').html('<div class="action">вступит в силу - сегодня <br>активно до - '+d+'</div>');
+					var pay_period_name = pay_period+' месяц';
+					var discount = '';
+					if(pay_period>1 && pay_period<5){
+						pay_period_name = pay_period+' месяца';
+						discount = ' <br>Скидка &mdash; '+discount_price+' ₽';
+					}
+					else if(pay_period>4){
+						pay_period_name = pay_period+' месяцев';
+						discount = ' <br>Скидка &mdash; '+discount_price+' ₽';
+					}
+					var price_month_this = price / pay_period;
+					$('#tarifs_block .tarif_selection .item .title').html('Тариф "'+t_name+'"');
+					$('#tarifs_block .tarif_selection .item .price').html('<div class="price">Период оплаты - '+pay_period_name+' <br>'+price_month_this+' ₽/мес</div>');
+					$('#tarifs_block .tarif_selection .item .text').html('<div class="text">разовый платеж - '+price+' ₽ <br>со счёта спишется - '+price+' ₽</div>');
+					$('#tarifs_block .tarif_selection .item .body .action').html('<div class="action">вступит в силу - сегодня <br>активно до - '+d+'</div>');
 					
 					/*
 					*  Возвращаем окно с вариантами тарифа по клику на заголовок
