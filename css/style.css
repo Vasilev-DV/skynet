@@ -1,0 +1,350 @@
+@import "reset.css";
+.box {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -khtml-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.display {
+  display: -moz-inline-stack;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  vertical-align: top;
+}
+.flex {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+.grow {
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  background: #efeff4;
+  color: #4f595f;
+}
+#tarifs_block .inner_block {
+  width: 100%;
+  margin: 0 auto;
+}
+#tarifs_block .inner_block .tarifs_list {
+  /* display: none; */
+  width: 100%;
+  font-size: 0;
+}
+#tarifs_block .inner_block .item {
+  cursor: pointer;
+  width: 33%;
+  max-width: 32%;
+  margin-right: 2%;
+  display: -moz-inline-stack;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  vertical-align: top;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -khtml-box-sizing: border-box;
+  box-sizing: border-box;
+  border-top: 1px solid #c8c7cc;
+  border-bottom: 1px solid #c8c7cc;
+  margin-bottom: 40px;
+  background: #ffffff;
+  padding: 30px 20px;
+}
+#tarifs_block .inner_block .item .title {
+  color: #82c12b;
+  padding-bottom: 20px;
+  font-weight: 600;
+  font-size: 30px;
+}
+#tarifs_block .inner_block .item .body {
+  border-top: 1px solid #c8c7cc;
+  padding: 16px 0;
+  background: url(/images/arr_min.png) no-repeat 95% center;
+}
+#tarifs_block .inner_block .item .body .speed {
+  margin-left: -20px;
+  line-height: 64px;
+  padding: 0 18px 0 20px;
+  color: #ffffff;
+  font-size: 28px;
+  background: #70603e;
+  display: -moz-inline-stack;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  vertical-align: top;
+  font-weight: 600;
+}
+#tarifs_block .inner_block .item .body .price {
+  margin-top: 20px;
+  font-size: 28px;
+  color: #4d575d;
+  font-weight: 600;
+}
+#tarifs_block .inner_block .item .body .text {
+  font-size: 20px;
+  color: #4d575d;
+  line-height: 120%;
+  margin-top: 25px;
+}
+#tarifs_block .inner_block .item .more {
+  border-top: 1px solid #c8c7cc;
+  padding-top: 35px;
+  font-size: 18px;
+}
+#tarifs_block .inner_block .item .more a {
+  color: #007aff;
+  text-decoration: none;
+  display: block;
+}
+#tarifs_block .inner_block .item:first-child {
+  margin-top: 0;
+}
+#tarifs_block .inner_block .item:nth-child(3n+1) .body .speed {
+  background: #70603e!important;
+}
+#tarifs_block .inner_block .item:nth-child(3n+2) .body .speed {
+  background: #0075d9!important;
+}
+#tarifs_block .inner_block .item:nth-child(3n+3) {
+  margin-right: 0;
+}
+#tarifs_block .inner_block .item:nth-child(3n+3) .body .speed {
+  background: #e74807!important;
+}
+#tarifs_block .inner_block .item:hover {
+  background: #fbfbfb;
+}
+#tarifs_block .inner_block .subtarifs_list {
+  display: none;
+}
+#tarifs_block .inner_block .subtarifs_list .item {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: default;
+  max-width: 100%;
+  width: 100%;
+}
+#tarifs_block .inner_block .subtarifs_list .item .name {
+  text-align: center;
+  font-size: 34px;
+  color: #000000;
+  background: #f7f7f8;
+  line-height: 84px;
+  border-bottom: 1px solid #a7a7aa;
+  cursor: pointer;
+  font-weight: 600;
+  position: relative;
+}
+#tarifs_block .inner_block .subtarifs_list .item .name:before {
+  content: "";
+  position: absolute;
+  width: 27px;
+  height: 42px;
+  left: 20px;
+  top: 50%;
+  margin-top: -21px;
+  background: url(/images/arr_big.png) no-repeat;
+}
+#tarifs_block .inner_block .subtarifs_list .item .block {
+  cursor: pointer;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -khtml-box-sizing: border-box;
+  box-sizing: border-box;
+  border-top: 1px solid #c8c7cc;
+  border-bottom: 1px solid #c8c7cc;
+  margin-top: 40px;
+  background: #ffffff;
+  padding: 25px 0 10px 30px;
+  width: 33%;
+  max-width: 32%;
+  margin-right: 2%;
+  display: -moz-inline-stack;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  vertical-align: top;
+}
+#tarifs_block .inner_block .subtarifs_list .item .block .body .price {
+  font-weight: 600;
+}
+#tarifs_block .inner_block .subtarifs_list .item .block:nth-child(3n+3) {
+  margin-right: 0;
+}
+#tarifs_block .inner_block .subtarifs_list .item .block:hover {
+  background: #fbfbfb;
+}
+#tarifs_block .inner_block .tarif_selection {
+  display: none;
+}
+#tarifs_block .inner_block .tarif_selection .item {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: default;
+  width: 100%;
+  max-width: 100%;
+}
+#tarifs_block .inner_block .tarif_selection .item .name {
+  text-align: center;
+  font-size: 34px;
+  color: #000000;
+  background: #f7f7f8;
+  line-height: 84px;
+  border-bottom: 1px solid #a7a7aa;
+  cursor: pointer;
+  font-weight: 600;
+  position: relative;
+}
+#tarifs_block .inner_block .tarif_selection .item .name:before {
+  content: "";
+  position: absolute;
+  width: 27px;
+  height: 42px;
+  left: 20px;
+  top: 50%;
+  margin-top: -21px;
+  background: url(/images/arr_big.png) no-repeat;
+}
+#tarifs_block .inner_block .tarif_selection .item .block {
+  cursor: pointer;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -khtml-box-sizing: border-box;
+  box-sizing: border-box;
+  border-top: 1px solid #c8c7cc;
+  border-bottom: 1px solid #c8c7cc;
+  margin-top: 70px;
+  background: #ffffff;
+  padding: 25px 30px 20px 30px;
+  width: 650px;
+  max-width: 650px;
+  margin: 70px auto 0!important;
+}
+#tarifs_block .inner_block .tarif_selection .item .block .title {
+  font-weight: 600;
+}
+#tarifs_block .inner_block .tarif_selection .item .block .body {
+  background-position: 100% center!important;
+}
+#tarifs_block .inner_block .tarif_selection .item .block .body .price {
+  font-weight: 600;
+  line-height: 120%;
+  margin-top: 0;
+}
+#tarifs_block .inner_block .tarif_selection .item .block .body .text {
+  margin-top: 20px;
+}
+#tarifs_block .inner_block .tarif_selection .item .block .body .action {
+  line-height: 120%;
+  margin-top: 20px;
+  color: #adadad;
+  font-size: 24px;
+}
+#tarifs_block .inner_block .tarif_selection .item .block .btn_block {
+  border-top: 1px solid #c8c7cc;
+  padding-top: 15px;
+}
+#tarifs_block .inner_block .tarif_selection .item .block:hover {
+  background: #fbfbfb;
+}
+#tarifs_block .inner_block .tarif_selection .item button {
+  background: #82c12b;
+  height: 80px;
+  line-height: 80px;
+  width: 100%;
+  color: #ffffff;
+  text-align: center;
+  font-size: 28px;
+  border: none;
+}
+@media screen and (max-width: 1024px) {
+  #tarifs_block .inner_block .item {
+    width: 49%;
+    max-width: 49%;
+    margin-left: 0;
+    margin-right: 2%;
+  }
+  #tarifs_block .inner_block .item .block {
+    width: 49%!important;
+    max-width: 49%!important;
+    margin-left: 0!important;
+    margin-right: 2%!important;
+  }
+  #tarifs_block .inner_block .item .block:nth-child(3n) {
+    margin-right: 2%!important;
+  }
+  #tarifs_block .inner_block .item .block:nth-child(2n) {
+    margin-right: 0!important;
+  }
+  #tarifs_block .inner_block .item:nth-child(3n) {
+    margin-right: 2%;
+  }
+  #tarifs_block .inner_block .item:nth-child(2n) {
+    margin-right: 0;
+  }
+  #tarifs_block .inner_block .tarif_selection .item .block {
+    max-width: 650px!important;
+    width: 650px!important;
+  }
+  #tarifs_block .inner_block .tarif_selection .item .block:nth-child(2n) {
+    margin-right: auto!important;
+  }
+}
+@media screen and (max-width: 640px) {
+  #tarifs_block .inner_block .item {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 30px 0 30px 40px!important;
+  }
+  #tarifs_block .inner_block .item .block {
+    width: 100%!important;
+    max-width: 100%!important;
+    margin-left: 0!important;
+    margin-right: 0!important;
+  }
+  #tarifs_block .inner_block .item .block:nth-child(3n) {
+    margin-right: 2%!important;
+  }
+  #tarifs_block .inner_block .item .block:nth-child(2n) {
+    margin-right: 0!important;
+  }
+  #tarifs_block .inner_block .item .title {
+    font-size: 34px;
+  }
+  #tarifs_block .inner_block .item .body .speed {
+    font-size: 32px;
+    margin-left: -40px !important;
+    padding: 0 18px 0 40px!important;
+  }
+  #tarifs_block .inner_block .item .body .price {
+    font-size: 32px;
+  }
+  #tarifs_block .inner_block .item .body .text {
+    font-size: 24px;
+  }
+  #tarifs_block .inner_block .subtarifs_list .item {
+    padding: 0!important;
+  }
+  #tarifs_block .inner_block .tarif_selection .item {
+    padding: 0px!important;
+  }
+  #tarifs_block .inner_block .tarif_selection .item .block {
+    max-width: 100%!important;
+    width: 100%!important;
+    padding: 25px 30px 20px 30px!important;
+  }
+}
