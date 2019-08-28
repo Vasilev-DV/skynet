@@ -59,7 +59,9 @@ if($datas->result=='ok'){
 				$prices_map = [];
 				for($s=0; $s<count($sub_tarifs); $s++){
 					$price = $sub_tarifs[$s]->price;
-					array_push($prices_map,$price);
+					$pay_period = intval($sub_tarifs[$s]->pay_period);
+					$price_month = $price/$pay_period;
+					array_push($prices_map,$price_month);
 				}
 				$prices = min($prices_map).' - '.max($prices_map);
 				
